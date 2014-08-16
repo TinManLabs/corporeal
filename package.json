@@ -1,0 +1,47 @@
+{
+  "name": "corporeal",
+  "version": "0.1.0",
+  "description": "An open toolkit for glucose simulation and analysis (not for treatment or therapy use)",
+  "private": true,
+  "keywords": ["TinManLabs", "glucose", "simulation", "analysis", "diabetes"],
+  "homepage": "https://github.com/TinManLabs/corporeal/wiki",
+  "bugs": "https://github.com/TinManLabs/corporeal/issues",
+  "license": "BSD-2-Clause",
+  "contributors": [
+    "Helene Brashear <helene@tinmanlabs.com>",
+    "Brad Fitzgibbons <brad@tinmanlabs.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TinManLabs/corporeal.git"
+  },
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rm -rf out coverage",
+    "lint": "./node_modules/.bin/jshint .",
+    "jsdoc": "./node_modules/.bin/jsdoc --pedantic ./lib/*.js README.md",
+    "pretest": "npm run-script clean && npm run-script lint && npm run-script jsdoc",
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --recursive -R spec -r should",
+    "posttest": "./node_modules/.bin/istanbul check-coverage"
+  },
+  "directories": {
+    "lib": "./lib",
+    "bin": "./bin"
+  },
+  "dependencies": {
+    "lodash": "2.4.1",
+    "mathjs": "0.26.0",
+    "js-priority-queue": "0.0.6",
+    "winston": "0.7.3"
+  },
+  "devDependencies": {
+    "forever": "0.11.1",
+    "jsdoc": "3.3.0-alpha9",
+    "jshint": "2.5.3",
+    "mocha": "1.21.4",
+    "should": "4.0.4",
+    "sinon": "1.10.3",
+    "rewire": "2.1.0",
+    "istanbul": "0.3.0"
+  }
+}
